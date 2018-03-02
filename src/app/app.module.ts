@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { ServerComponent } from './server/server.component';
-import { ServersComponent } from './servers/servers.component';
+import { ServerComponent } from './lecture/server/server.component';
+import { ServersComponent } from './lecture/servers/servers.component';
 import { WarningAlertComponent } from './exercise1/warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './exercise1/success-alert/success-alert.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { UsernameInterpolateComponent } from './exercise2/username-interpolate/username-interpolate.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { TabsComponent } from './tabs/tabs.component';
     ServersComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
-    TabsComponent
+    TabsComponent,
+    UsernameInterpolateComponent
   ],
   imports: [
     BrowserModule,
