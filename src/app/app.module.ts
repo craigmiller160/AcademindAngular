@@ -11,7 +11,6 @@ import { SuccessAlertComponent } from './older-lessons/exercise1/success-alert/s
 import { TabsComponent } from './older-lessons/tabs/tabs.component';
 import { UsernameInterpolateComponent } from './older-lessons/exercise2/username-interpolate/username-interpolate.component';
 import { LogButtonClicksComponent } from './older-lessons/exercise3/log-button-clicks/log-button-clicks.component';
-import { OlderLessonsComponent } from './older-lessons/older-lessons.component';
 
 
 @NgModule({
@@ -24,7 +23,6 @@ import { OlderLessonsComponent } from './older-lessons/older-lessons.component';
     TabsComponent,
     UsernameInterpolateComponent,
     LogButtonClicksComponent,
-    OlderLessonsComponent
   ],
   imports: [
     BrowserModule,
