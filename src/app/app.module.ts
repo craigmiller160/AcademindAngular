@@ -10,6 +10,7 @@ import { WarningAlertComponent } from './exercise1/warning-alert/warning-alert.c
 import { SuccessAlertComponent } from './exercise1/success-alert/success-alert.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { UsernameInterpolateComponent } from './exercise2/username-interpolate/username-interpolate.component';
+import { LogButtonClicksComponent } from './exercise3/log-button-clicks/log-button-clicks.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { UsernameInterpolateComponent } from './exercise2/username-interpolate/u
     WarningAlertComponent,
     SuccessAlertComponent,
     TabsComponent,
-    UsernameInterpolateComponent
+    UsernameInterpolateComponent,
+    LogButtonClicksComponent
   ],
   imports: [
     BrowserModule,

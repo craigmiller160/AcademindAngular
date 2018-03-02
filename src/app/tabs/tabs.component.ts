@@ -10,8 +10,9 @@ export class TabsComponent implements OnInit {
   selectedIndex = 0;
   tabs: string[] = [
     'Main Lecture',
-    'Exercise 1',
-    'Exercise 2'
+    'Ex 1 - Components',
+    'Ex 2 - Data Binding',
+    'Ex 3 - Directives'
   ];
 
   constructor() { }

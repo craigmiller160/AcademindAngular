@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button type="button" class="btn btn-primary" (click)="buttonClicked()">Display Details</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p *ngIf="hasBeenClicked">Secret Password = tuna</p>
+  </div>
+</div>
+<div class="row" *ngFor="let btnClick of buttonClicks; let i = index">
+  <div class="col-xs-12" [ngStyle]="{ 'background-color': getBackgroundColor(i) }" [ngClass]="{ 'white-text': isTextWhite(i) }">
+    <p>{{ btnClick }}</p>
+  </div>
+</div>
