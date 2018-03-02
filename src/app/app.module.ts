@@ -11,6 +11,13 @@ import { SuccessAlertComponent } from './older-lessons/exercise1/success-alert/s
 import { TabsComponent } from './older-lessons/tabs/tabs.component';
 import { UsernameInterpolateComponent } from './older-lessons/exercise2/username-interpolate/username-interpolate.component';
 import { LogButtonClicksComponent } from './older-lessons/exercise3/log-button-clicks/log-button-clicks.component';
+import { HeaderComponent } from './header/header.component';
+import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.component';
+import { ShoppingListEditComponent } from './shopping/shopping-list-edit/shopping-list-edit.component';
+import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
+import { RecipeItemComponent } from './recipe/recipe-item/recipe-item.component';
+import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
+import { RecipeViewComponent } from './recipe/recipe-view/recipe-view.component';
 
 
 @NgModule({
@@ -23,6 +30,13 @@ import { LogButtonClicksComponent } from './older-lessons/exercise3/log-button-c
     TabsComponent,
     UsernameInterpolateComponent,
     LogButtonClicksComponent,
+    HeaderComponent,
+    ShoppingListComponent,
+    ShoppingListEditComponent,
+    RecipeListComponent,
+    RecipeItemComponent,
+    RecipeDetailComponent,
+    RecipeViewComponent,
   ],
   imports: [
     BrowserModule,
