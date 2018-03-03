@@ -18,6 +18,9 @@ import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component'
 import { RecipeItemComponent } from './recipe/recipe-item/recipe-item.component';
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
 import { RecipeViewComponent } from './recipe/recipe-view/recipe-view.component';
+import { CompsBindingDeepComponent } from './other-lessons/comps-binding-deep/comps-binding-deep.component';
+import { CockpitComponent } from './other-lessons/comps-binding-deep/cockpit/cockpit.component';
+import { ServerElementComponent } from './other-lessons/comps-binding-deep/server-element/server-element.component';
 
 
 @NgModule({
@@ -37,6 +40,9 @@ import { RecipeViewComponent } from './recipe/recipe-view/recipe-view.component'
     RecipeItemComponent,
     RecipeDetailComponent,
     RecipeViewComponent,
+    CompsBindingDeepComponent,
+    CockpitComponent,
+    ServerElementComponent,
   ],
   imports: [
     BrowserModule,
