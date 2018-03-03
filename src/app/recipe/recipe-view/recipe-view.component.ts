@@ -8,7 +8,8 @@ import {Recipe} from '../../model/recipe.model';
 })
 export class RecipeViewComponent implements OnInit {
 
-  selectedRecipe = new Recipe('', '', '');
+  // selectedRecipe = new Recipe('', '', '');
+  selectedRecipe: Recipe;
 
   constructor() { }
 
