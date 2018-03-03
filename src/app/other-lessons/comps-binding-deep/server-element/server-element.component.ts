@@ -1,6 +1,7 @@
 import {
-  AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit,
-  SimpleChanges,
+  AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, Input, OnChanges, OnDestroy,
+  OnInit,
+  SimpleChanges, ViewChild,
   ViewEncapsulation
 } from '@angular/core';
 import { BindingServer, BindingServerType } from '../binding-server.model';
@@ -14,6 +15,7 @@ import { BindingServer, BindingServerType } from '../binding-server.model';
 export class ServerElementComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,
   AfterViewInit, AfterViewChecked, OnDestroy {
   @Input('srvElement') element: BindingServer;
+  @ViewChild('heading') header: ElementRef;
 
   constructor() {
     console.log('Constructor called');
@@ -21,6 +23,7 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
 
   ngOnInit(): void {
     console.log('NgOnInit called');
+    console.log('TextContent: ' + this.header.nativeElement.textContent);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -53,6 +56,7 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
 
   ngAfterViewInit(): void {
     console.log('NgAfterViewInit called');
+    console.log('TextContent: ' + this.header.nativeElement.textContent);
   }
 
   ngAfterViewChecked(): void {
