@@ -9,7 +9,7 @@ import { BindingServer, BindingServerType } from '../binding-server.model';
 export class CockpitComponent implements OnInit {
   // TODO add better types
   @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
-  @Output() blueprintCreated = new EventEmitter<{blueprintName: string, blueprintContent: string}>();
+  @Output('bpCreated') blueprintCreated = new EventEmitter<{blueprintName: string, blueprintContent: string}>();
   newServerName = '';
   newServerContent = '';
 
