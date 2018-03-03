@@ -26,4 +26,8 @@ export class CompsBindingDeepComponent implements OnInit {
     this.serverElements.push(new BindingServer(BindingServerType.BLUEPRINT, blueprintData.blueprintName, blueprintData.blueprintContent));
   }
 
+  onChangeFirst(): void{
+    this.serverElements[0].name = 'Name Changed';
+  }
+
 }
