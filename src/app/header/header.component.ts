@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  @Output() headerClick = new EventEmitter<{btnIndex: number}>();
+  btnIndex = 0;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onHeaderClick(btnIndex: number): void {
+    this.headerClick.emit({btnIndex: btnIndex});
+    this.btnIndex = btnIndex;
   }
 
 }

@@ -1,10 +1,10 @@
-<app-header></app-header>
+<app-header (headerClick)="onHeaderBtnClick($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <!--<app-recipe-view></app-recipe-view>-->
-      <!--<app-shopping-list></app-shopping-list>-->
-      <app-tabs></app-tabs>
+      <app-recipe-view *ngIf="headerBtnIndex === 0"></app-recipe-view>
+      <app-shopping-list *ngIf="headerBtnIndex === 1"></app-shopping-list>
+      <app-tabs *ngIf="headerBtnIndex === 2"></app-tabs>
     </div>
   </div>
 </div>

@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {}
+export class AppComponent {
+  headerBtnIndex = 0;
+
+  onHeaderBtnClick(event: {btnIndex: number}): void {
+    this.headerBtnIndex = event.btnIndex;
+  }
+}
