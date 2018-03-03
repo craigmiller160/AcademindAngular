@@ -23,6 +23,7 @@ import { CockpitComponent } from './other-lessons/comps-binding-deep/cockpit/coc
 import { ServerElementComponent } from './other-lessons/comps-binding-deep/server-element/server-element.component';
 import { ControlComponent } from './other-lessons/show-numbers/control/control.component';
 import { BasicHighlightDirective } from './other-lessons/show-numbers/control/basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './other-lessons/show-numbers/control/better-highlight/better-highlight.directive';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { BasicHighlightDirective } from './other-lessons/show-numbers/control/ba
     CockpitComponent,
     ServerElementComponent,
     ControlComponent,
-    BasicHighlightDirective
+    BasicHighlightDirective,
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule,
