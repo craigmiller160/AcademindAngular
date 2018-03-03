@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import { BindingServer } from '../binding-server.model';
+import { BindingServer, BindingServerType } from '../binding-server.model';
 
 @Component({
   selector: 'app-server-element',
@@ -13,6 +13,14 @@ export class ServerElementComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isServerType(element: BindingServer): boolean {
+    return element.type === BindingServerType.SERVER;
+  }
+
+  isBlueprintType(element: BindingServer): boolean {
+    return element.type === BindingServerType.BLUEPRINT;
   }
 
 }
