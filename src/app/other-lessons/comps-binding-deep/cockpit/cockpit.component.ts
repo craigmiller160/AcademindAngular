@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { BindingServer, BindingServerType } from '../binding-server.model';
 
 @Component({
@@ -7,21 +7,23 @@ import { BindingServer, BindingServerType } from '../binding-server.model';
   styleUrls: ['./cockpit.component.css']
 })
 export class CockpitComponent implements OnInit {
-
+  // TODO add better types
+  @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
+  @Output() blueprintCreated = new EventEmitter<{blueprintName: string, blueprintContent: string}>();
   newServerName = '';
   newServerContent = '';
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  onAddServer() {
-    this.serverElements.push(new BindingServer(BindingServerType.SERVER, this.newServerName, this.newServerContent));
+  onAddServer(): void {
+    this.serverCreated.emit({serverName: this.newServerName, serverContent: this.newServerContent});
   }
 
-  onAddBlueprint() {
-    this.serverElements.push(new BindingServer(BindingServerType.BLUEPRINT, this.newServerName, this.newServerContent));
+  onAddBlueprint(): void {
+    this.blueprintCreated.emit({blueprintName: this.newServerName, blueprintContent: this.newServerContent});
   }
 
 }
