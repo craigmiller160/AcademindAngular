@@ -13,7 +13,8 @@ export class TabsComponent implements OnInit {
     'Ex 1 - Components',
     'Ex 2 - Data Binding',
     'Ex 3 - Directives',
-    'Comps/Binding - Deep'
+    'Comps/Binding - Deep',
+    'Directives - Deep'
   ];
 
   constructor() { }

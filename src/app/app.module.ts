@@ -21,6 +21,8 @@ import { RecipeViewComponent } from './recipe/recipe-view/recipe-view.component'
 import { CompsBindingDeepComponent } from './other-lessons/comps-binding-deep/comps-binding-deep.component';
 import { CockpitComponent } from './other-lessons/comps-binding-deep/cockpit/cockpit.component';
 import { ServerElementComponent } from './other-lessons/comps-binding-deep/server-element/server-element.component';
+import { ControlComponent } from './other-lessons/show-numbers/control/control.component';
+import { BasicHighlightDirective } from './other-lessons/show-numbers/control/basic-highlight/basic-highlight.directive';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { ServerElementComponent } from './other-lessons/comps-binding-deep/serve
     CompsBindingDeepComponent,
     CockpitComponent,
     ServerElementComponent,
+    ControlComponent,
+    BasicHighlightDirective
   ],
   imports: [
     BrowserModule,
