@@ -11,6 +11,7 @@ export class ControlComponent implements OnInit {
   oddNumbers: number[] = [1, 3, 5];
   evenNumbers: number[] = [2, 4];
   onlyOdd = false;
+  value = 6;
 
   constructor() { }
 
