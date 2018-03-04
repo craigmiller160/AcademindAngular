@@ -25,6 +25,7 @@ import { ControlComponent } from './other-lessons/show-numbers/control/control.c
 import { BasicHighlightDirective } from './other-lessons/show-numbers/control/basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './other-lessons/show-numbers/control/better-highlight/better-highlight.directive';
 import { UnlessDirective } from './other-lessons/show-numbers/control/unless/unless.directive';
+import { DropdownDirective } from './directive/dropdown.directive';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { UnlessDirective } from './other-lessons/show-numbers/control/unless/unl
     ControlComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
