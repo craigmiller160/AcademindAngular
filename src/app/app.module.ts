@@ -24,6 +24,7 @@ import { ServerElementComponent } from './other-lessons/comps-binding-deep/serve
 import { ControlComponent } from './other-lessons/show-numbers/control/control.component';
 import { BasicHighlightDirective } from './other-lessons/show-numbers/control/basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './other-lessons/show-numbers/control/better-highlight/better-highlight.directive';
+import { UnlessDirective } from './other-lessons/show-numbers/control/unless/unless.directive';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { BetterHighlightDirective } from './other-lessons/show-numbers/control/b
     ServerElementComponent,
     ControlComponent,
     BasicHighlightDirective,
-    BetterHighlightDirective
+    BetterHighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
