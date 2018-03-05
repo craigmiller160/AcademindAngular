@@ -7,7 +7,7 @@ import { AccountsService } from './accounts.service';
   styleUrls: ['./accounts-app.component.css']
 })
 export class AccountsAppComponent implements OnInit{
-  accounts: [{name: string, status: string}] = [];
+  accounts: {name: string, status: string}[];
 
   constructor(private accountsService: AccountsService) { }
 
