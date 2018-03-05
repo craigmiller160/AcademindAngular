@@ -11,7 +11,7 @@ export class ShoppingService {
     new Ingredient('Apples', 5),
     new Ingredient('Tomatoes', 10)
   ];
-  ingredientAdded = new EventEmitter<void>();
+  readonly ingredientsChanged = new EventEmitter<Ingredient[]>();
 
   constructor() { }
 
@@ -21,7 +21,7 @@ export class ShoppingService {
 
   onAddIngredient(ingredient: Ingredient): void {
     this.ingredients.push(ingredient);
-    this.ingredientAdded.emit();
+    this.ingredientsChanged.emit(this.ingredients.slice());
   }
 
 }
