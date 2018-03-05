@@ -14,7 +14,8 @@ export class TabsComponent implements OnInit {
     'Ex 2 - Data Binding',
     'Ex 3 - Directives',
     'Comps/Binding - Deep',
-    'Directives - Deep'
+    'Directives - Deep',
+    'Services - Accounts'
   ];
 
   constructor() { }

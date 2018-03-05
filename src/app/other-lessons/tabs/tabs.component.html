@@ -7,12 +7,15 @@
     </ul>
   </div>
 </div>
-<app-servers *ngIf="selectedIndex === 0"></app-servers>
-<div *ngIf="selectedIndex === 1">
-  <app-success-alert></app-success-alert>
-  <app-warning-alert></app-warning-alert>
+<div [ngSwitch]="selectedIndex">
+  <app-servers *ngSwitchCase="0"></app-servers>
+  <div *ngSwitchCase="1">
+    <app-success-alert></app-success-alert>
+    <app-warning-alert></app-warning-alert>
+  </div>
+  <app-username-interpolate *ngSwitchCase="2"></app-username-interpolate>
+  <app-log-button-clicks *ngSwitchCase="3"></app-log-button-clicks>
+  <app-comps-binding-deep *ngSwitchCase="4"></app-comps-binding-deep>
+  <app-control *ngSwitchCase="5"></app-control>
+  <app-accounts-app *ngSwitchCase="6"></app-accounts-app>
 </div>
-<app-username-interpolate *ngIf="selectedIndex === 2"></app-username-interpolate>
-<app-log-button-clicks *ngIf="selectedIndex === 3"></app-log-button-clicks>
-<app-comps-binding-deep *ngIf="selectedIndex === 4"></app-comps-binding-deep>
-<app-control *ngIf="selectedIndex === 5"></app-control>
