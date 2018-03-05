@@ -4,8 +4,7 @@ import { AccountsService } from './accounts.service';
 @Component({
   selector: 'app-accounts-app',
   templateUrl: './accounts-app.component.html',
-  styleUrls: ['./accounts-app.component.css'],
-  providers: [AccountsService]
+  styleUrls: ['./accounts-app.component.css']
 })
 export class AccountsAppComponent implements OnInit{
   accounts: [{name: string, status: string}] = [];

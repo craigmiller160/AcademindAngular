@@ -29,6 +29,8 @@ import { DropdownDirective } from './directive/dropdown.directive';
 import { AccountsAppComponent } from './other-lessons/accounts/accounts-app.component';
 import { AccountComponent } from './other-lessons/accounts/account/account.component';
 import { NewAccountComponent } from './other-lessons/accounts/new-account/new-account.component';
+import { AccountsService } from './other-lessons/accounts/accounts.service';
+import { LoggingService } from './other-lessons/accounts/logging.service';
 
 
 @NgModule({
@@ -64,7 +66,10 @@ import { NewAccountComponent } from './other-lessons/accounts/new-account/new-ac
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AccountsService,
+    LoggingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
