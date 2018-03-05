@@ -32,6 +32,7 @@ import { NewAccountComponent } from './other-lessons/accounts/new-account/new-ac
 import { AccountsService } from './other-lessons/accounts/accounts.service';
 import { LoggingService } from './other-lessons/accounts/logging.service';
 import { RecipeService } from './service/recipe.service';
+import { ShoppingService } from './service/shopping.service';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { RecipeService } from './service/recipe.service';
   providers: [
     AccountsService,
     LoggingService,
-    RecipeService
+    RecipeService,
+    ShoppingService
   ],
   bootstrap: [AppComponent]
 })
