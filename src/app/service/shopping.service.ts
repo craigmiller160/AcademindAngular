@@ -20,14 +20,21 @@ export class ShoppingService {
   }
 
   addIngredient(ingredient: Ingredient): void {
+    this.findAndAddIngredient(ingredient);
+    this.ingredientsChanged.emit(this.ingredients.slice());
+  }
+
+  private findAndAddIngredient(ingredient: Ingredient): void {
     const existingIngredient = this.ingredients.find(element => element.name === ingredient.name);
     if(existingIngredient){
       existingIngredient.amount += ingredient.amount;
-    }
-    else{
+    } else{
       this.ingredients.push(ingredient);
     }
+  }
 
+  addAllIngredients(ingredients: Ingredient[]): void {
+    ingredients.forEach(ingredient => this.findAndAddIngredient(ingredient));
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
 
