@@ -20,7 +20,7 @@ export class ShoppingListEditComponent implements OnInit {
 
   onAddBtnClicked(): void {
     // this.addBtnClicked.emit(new Ingredient(this.nameInput.nativeElement.value, this.amountInput.nativeElement.value));
-    this.shoppingService.onAddIngredient(new Ingredient(this.nameInput.nativeElement.value, this.amountInput.nativeElement.value));
+    this.shoppingService.addIngredient(new Ingredient(this.nameInput.nativeElement.value, this.amountInput.nativeElement.value));
   }
 
 }

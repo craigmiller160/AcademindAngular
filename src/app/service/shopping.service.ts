@@ -19,8 +19,15 @@ export class ShoppingService {
     return this.ingredients.slice();
   }
 
-  onAddIngredient(ingredient: Ingredient): void {
-    this.ingredients.push(ingredient);
+  addIngredient(ingredient: Ingredient): void {
+    const existingIngredient = this.ingredients.find(element => element.name === ingredient.name);
+    if(existingIngredient){
+      existingIngredient.amount += ingredient.amount;
+    }
+    else{
+      this.ingredients.push(ingredient);
+    }
+
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
 
