@@ -26,10 +26,10 @@ export class ShoppingService {
 
   private findAndAddIngredient(ingredient: Ingredient): void {
     const existingIngredient = this.ingredients.find(element => element.name === ingredient.name);
-    if(existingIngredient){
+    if (existingIngredient) {
       existingIngredient.amount += ingredient.amount;
-    } else{
-      this.ingredients.push(ingredient);
+    } else {
+      this.ingredients.push(new Ingredient(ingredient.name, ingredient.amount));
     }
   }
 
