@@ -103,7 +103,13 @@ const headerRoutes: Routes = [
           },
           {
             path: 'users',
-            component: RoutingUsersComponent
+            component: RoutingUsersComponent,
+            children: [
+              {
+                path: ':id',
+                component: RoutingUserComponent
+              }
+            ]
           },
           {
             path: 'servers',
