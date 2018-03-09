@@ -15,7 +15,8 @@ export class TabsComponent implements OnInit {
     'Ex 3 - Directives',
     'Comps/Binding - Deep',
     'Directives - Deep',
-    'Services - Accounts'
+    'Services - Accounts',
+    'Servers & Routing'
   ];
 
   constructor() { }
