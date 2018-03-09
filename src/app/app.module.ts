@@ -37,7 +37,7 @@ import { ServersRoutingComponent } from './other-lessons/servers-routing/servers
 import { RoutingHomeComponent } from './other-lessons/servers-routing/routing-home/routing-home.component';
 import { RoutingUsersComponent } from './other-lessons/servers-routing/routing-users/routing-users.component';
 import { RoutingServersComponent } from './other-lessons/servers-routing/routing-servers/routing-servers.component';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { RoutingEditServerComponent } from './other-lessons/servers-routing/routing-servers/routing-edit-server/routing-edit-server.component';
 import { RoutingServerComponent } from './other-lessons/servers-routing/routing-servers/routing-server/routing-server.component';
 import { RoutingServersService } from './other-lessons/servers-routing/routing-servers/routing-servers.service';
@@ -45,7 +45,16 @@ import { RoutingUserComponent } from './other-lessons/servers-routing/routing-us
 
 const appRoutes: Routes = [
   {
-    path: 'users'
+    path: 'other-lessons/routing',
+    component: RoutingHomeComponent
+  },
+  {
+    path: 'other-lessons/routing/users',
+    component: RoutingUsersComponent
+  },
+  {
+    path: 'other-lessons/routing/servers',
+    component: RoutingServersComponent
   }
 ];
 
@@ -87,7 +96,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     AccountsService,
