@@ -120,7 +120,7 @@ const headerRoutes: Routes = [
                 component: RoutingServerComponent,
                 children: [
                   {
-                    path: 'edit',
+                    path: 'edit', // TODO might want to move this up a level
                     component: RoutingEditServerComponent
                   }
                 ]

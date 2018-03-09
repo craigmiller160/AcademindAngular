@@ -15,7 +15,7 @@ export class RoutingServerComponent implements OnInit {
 
   ngOnInit() {
     this.getServerFromParams(this.route.snapshot.params);
-    this.route.params.subscribe(params => this.server = this.serversService.getServer(Number(params.id)));
+    this.route.params.subscribe(this.getServerFromParams.bind(this));
   }
 
   private getServerFromParams(params: Params): void {
