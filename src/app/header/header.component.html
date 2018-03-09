@@ -11,13 +11,18 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li [ngClass]="{active: btnIndex === 0}">
-          <a href="#" (click)="onHeaderClick(0)">Recipes</a>
+          <a routerLink="recipes" (click)="onHeaderClick(0)">Recipes</a>
         </li>
         <li [ngClass]="{active: btnIndex === 1}">
-          <a href="#" (click)="onHeaderClick(1)">Shopping List</a>
+          <a routerLink="shopping-list" (click)="onHeaderClick(1)">Shopping List</a>
         </li>
-        <li [ngClass]="{active: btnIndex === 2}">
-          <a href="#" (click)="onHeaderClick(2)">Other Lessons</a>
+        <li [ngClass]="{active: btnIndex === 2}" class="dropdown" appDropdown="">
+          <a style="cursor: pointer;" (click)="onHeaderClick(2)">Other Lessons <span class="caret"></span> </a>
+          <ul class="dropdown-menu">
+            <li *ngFor="let lesson of otherLessons">
+              <a [routerLink]="lesson.getFullPath()" style="cursor: pointer;">{{ lesson.name }}</a>
+            </li>
+          </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

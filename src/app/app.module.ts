@@ -42,19 +42,62 @@ import { RoutingEditServerComponent } from './other-lessons/servers-routing/rout
 import { RoutingServerComponent } from './other-lessons/servers-routing/routing-servers/routing-server/routing-server.component';
 import { RoutingServersService } from './other-lessons/servers-routing/routing-servers/routing-servers.service';
 import { RoutingUserComponent } from './other-lessons/servers-routing/routing-users/routing-user/routing-user.component';
+import { Exercise1Component } from './other-lessons/exercise1/exercise1.component';
+import { OtherLessons } from './other-lessons/OtherLessons';
 
-const appRoutes: Routes = [
+const headerRoutes: Routes = [
   {
-    path: 'other-lessons/routing',
-    component: RoutingHomeComponent
+    path: '',
+    component: RecipeViewComponent
   },
   {
-    path: 'other-lessons/routing/users',
-    component: RoutingUsersComponent
+    path: 'recipes',
+    component: RecipeViewComponent
   },
   {
-    path: 'other-lessons/routing/servers',
-    component: RoutingServersComponent
+    path: 'shopping-list',
+    component: ShoppingListComponent
+  },
+  {
+    path: 'other-lessons',
+    children: [
+      {
+        path: '',
+        component: ServersComponent
+      },
+      {
+        path: OtherLessons.OTHER_LESSONS[0].path,
+        component: ServersComponent
+      },
+      {
+        path: OtherLessons.OTHER_LESSONS[1].path,
+        component: Exercise1Component
+      },
+      {
+        path: OtherLessons.OTHER_LESSONS[2].path,
+        component: UsernameInterpolateComponent
+      },
+      {
+        path: OtherLessons.OTHER_LESSONS[3].path,
+        component: LogButtonClicksComponent
+      },
+      {
+        path: OtherLessons.OTHER_LESSONS[4].path,
+        component: CompsBindingDeepComponent
+      },
+      {
+        path: OtherLessons.OTHER_LESSONS[5].path,
+        component: ControlComponent
+      },
+      {
+        path: OtherLessons.OTHER_LESSONS[6].path,
+        component: AccountsAppComponent
+      },
+      {
+        path: OtherLessons.OTHER_LESSONS[7].path,
+        component: ServersRoutingComponent
+      }
+    ]
   }
 ];
 
@@ -92,12 +135,13 @@ const appRoutes: Routes = [
     RoutingServersComponent,
     RoutingEditServerComponent,
     RoutingServerComponent,
-    RoutingUserComponent
+    RoutingUserComponent,
+    Exercise1Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(headerRoutes)
   ],
   providers: [
     AccountsService,
