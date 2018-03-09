@@ -116,8 +116,14 @@ const headerRoutes: Routes = [
             component: RoutingServersComponent,
             children: [
               {
-                path: ':id/edit',
-                component: RoutingEditServerComponent
+                path: ':id',
+                component: RoutingServerComponent,
+                children: [
+                  {
+                    path: 'edit',
+                    component: RoutingEditServerComponent
+                  }
+                ]
               }
             ]
           }
