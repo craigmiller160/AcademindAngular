@@ -95,7 +95,21 @@ const headerRoutes: Routes = [
       },
       {
         path: OtherLessons.OTHER_LESSONS[7].path,
-        component: ServersRoutingComponent
+        component: ServersRoutingComponent,
+        children: [
+          {
+            path: '',
+            component: RoutingHomeComponent
+          },
+          {
+            path: 'users',
+            component: RoutingUsersComponent
+          },
+          {
+            path: 'servers',
+            component: RoutingServersComponent
+          }
+        ]
       }
     ]
   }
