@@ -1,2 +1,12 @@
-<p>User with ID _ID_ loaded.</p>
-<p>User name is _NAME_</p>
+<div class="row">
+  <div class="col-xs-12">
+    <p>User with ID {{ user.id }} loaded.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p>User name is {{ user.name }}</p>
+  </div>
+</div>
+<hr />
+<a [routerLink]="['../../', 10, 'Anna']">Load Anna (10)</a>

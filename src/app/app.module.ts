@@ -106,7 +106,7 @@ const headerRoutes: Routes = [
             component: RoutingUsersComponent,
             children: [
               {
-                path: ':id',
+                path: ':id/:name',
                 component: RoutingUserComponent
               }
             ]
@@ -115,6 +115,10 @@ const headerRoutes: Routes = [
             path: 'servers',
             component: RoutingServersComponent
           }
+          // {
+          //   path: 'users/:id/:name',
+          //   component: RoutingUserComponent
+          // }
         ]
       }
     ]
