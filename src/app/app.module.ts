@@ -46,6 +46,8 @@ import { Exercise1Component } from './other-lessons/exercise1/exercise1.componen
 import { OtherLessons } from './other-lessons/OtherLessons';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './other-lessons/servers-routing/auth.service';
+import { AuthGuard } from './other-lessons/servers-routing/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -95,7 +97,9 @@ import { AppRoutingModule } from './app-routing.module';
     LoggingService,
     RecipeService,
     ShoppingService,
-    RoutingServersService
+    RoutingServersService,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

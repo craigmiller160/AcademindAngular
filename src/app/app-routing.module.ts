@@ -18,6 +18,7 @@ import { RoutingHomeComponent } from './other-lessons/servers-routing/routing-ho
 import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.component';
 import { RoutingServerComponent } from './other-lessons/servers-routing/routing-servers/routing-server/routing-server.component';
 import { RoutingEditServerComponent } from './other-lessons/servers-routing/routing-servers/routing-edit-server/routing-edit-server.component';
+import { AuthGuard } from './other-lessons/servers-routing/auth-guard.service';
 
 const appRoutes: Routes = [
   {
@@ -89,6 +90,9 @@ const appRoutes: Routes = [
           {
             path: 'servers',
             component: RoutingServersComponent,
+            canActivate: [
+              AuthGuard
+            ],
             children: [
               {
                 path: ':id',
