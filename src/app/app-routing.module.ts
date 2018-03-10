@@ -23,6 +23,100 @@ import { CanDeactivateGuard } from './other-lessons/servers-routing/routing-serv
 import { RoutingErrorPageComponent } from './other-lessons/servers-routing/routing-error-page/routing-error-page.component';
 import { ServerResolver } from './other-lessons/servers-routing/routing-servers/routing-server/server-resolver.service';
 
+const serversRoutingRoutes = {
+  path: OtherLessons.OTHER_LESSONS[7].path,
+  component: ServersRoutingComponent,
+  children: [
+    {
+      path: '',
+      component: RoutingHomeComponent
+    },
+    {
+      path: 'users',
+      component: RoutingUsersComponent,
+      children: [
+        {
+          path: ':id/:name',
+          component: RoutingUserComponent
+        }
+      ]
+    },
+    {
+      path: 'servers',
+      component: RoutingServersComponent,
+      canActivateChild: [
+        AuthGuard
+      ],
+      children: [
+        {
+          path: ':id',
+          component: RoutingServerComponent,
+          resolve: {
+            server: ServerResolver
+          }
+        },
+        {
+          path: ':id/edit',
+          component: RoutingEditServerComponent,
+          canDeactivate: [
+            CanDeactivateGuard
+          ]
+        }
+      ]
+    },
+    {
+      path: '**',
+      redirectTo: 'not-found'
+    },
+    {
+      path: 'not-found',
+      component: RoutingErrorPageComponent,
+      data: {
+        message: 'Page not found!'
+      }
+    }
+  ]
+};
+
+const otherLessonsRoutes = {
+  path: 'other-lessons',
+  children: [
+    {
+      path: '',
+      component: ServersComponent
+    },
+    {
+      path: OtherLessons.OTHER_LESSONS[0].path,
+      component: ServersComponent
+    },
+    {
+      path: OtherLessons.OTHER_LESSONS[1].path,
+      component: Exercise1Component
+    },
+    {
+      path: OtherLessons.OTHER_LESSONS[2].path,
+      component: UsernameInterpolateComponent
+    },
+    {
+      path: OtherLessons.OTHER_LESSONS[3].path,
+      component: LogButtonClicksComponent
+    },
+    {
+      path: OtherLessons.OTHER_LESSONS[4].path,
+      component: CompsBindingDeepComponent
+    },
+    {
+      path: OtherLessons.OTHER_LESSONS[5].path,
+      component: ControlComponent
+    },
+    {
+      path: OtherLessons.OTHER_LESSONS[6].path,
+      component: AccountsAppComponent
+    },
+    serversRoutingRoutes
+  ]
+};
+
 const appRoutes: Routes = [
   {
     path: '',
@@ -37,97 +131,7 @@ const appRoutes: Routes = [
     path: 'shopping-list',
     component: ShoppingListComponent
   },
-  {
-    path: 'other-lessons',
-    children: [
-      {
-        path: '',
-        component: ServersComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[0].path,
-        component: ServersComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[1].path,
-        component: Exercise1Component
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[2].path,
-        component: UsernameInterpolateComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[3].path,
-        component: LogButtonClicksComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[4].path,
-        component: CompsBindingDeepComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[5].path,
-        component: ControlComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[6].path,
-        component: AccountsAppComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[7].path,
-        component: ServersRoutingComponent,
-        children: [
-          {
-            path: '',
-            component: RoutingHomeComponent
-          },
-          {
-            path: 'users',
-            component: RoutingUsersComponent,
-            children: [
-              {
-                path: ':id/:name',
-                component: RoutingUserComponent
-              }
-            ]
-          },
-          {
-            path: 'servers',
-            component: RoutingServersComponent,
-            canActivateChild: [
-              AuthGuard
-            ],
-            children: [
-              {
-                path: ':id',
-                component: RoutingServerComponent,
-                resolve: {
-                  server: ServerResolver
-                }
-              },
-              {
-                path: ':id/edit',
-                component: RoutingEditServerComponent,
-                canDeactivate: [
-                  CanDeactivateGuard
-                ]
-              }
-            ]
-          },
-          {
-            path: '**',
-            redirectTo: 'not-found'
-          },
-          {
-            path: 'not-found',
-            component: RoutingErrorPageComponent,
-            data: {
-              message: 'Page not found!'
-            }
-          }
-        ]
-      }
-    ]
-  },
+  otherLessonsRoutes,
   {
     path: 'not-found',
     component: PageNotFoundComponent
