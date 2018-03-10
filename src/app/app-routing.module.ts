@@ -22,7 +22,8 @@ import { RoutingEditServerComponent } from './other-lessons/servers-routing/rout
 const appRoutes: Routes = [
   {
     path: '',
-    component: RecipeViewComponent
+    redirectTo: 'recipes',
+    pathMatch: 'full'
   },
   {
     path: 'recipes',
