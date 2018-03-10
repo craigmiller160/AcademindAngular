@@ -44,6 +44,7 @@ import { RoutingServersService } from './other-lessons/servers-routing/routing-s
 import { RoutingUserComponent } from './other-lessons/servers-routing/routing-users/routing-user/routing-user.component';
 import { Exercise1Component } from './other-lessons/exercise1/exercise1.component';
 import { OtherLessons } from './other-lessons/OtherLessons';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const headerRoutes: Routes = [
   {
@@ -128,6 +129,18 @@ const headerRoutes: Routes = [
         ]
       }
     ]
+  },
+  {
+    path: 'not-found',
+    component: PageNotFoundComponent
+  },
+  {
+    path: 'something',
+    redirectTo: '/not-found' // This is a redirect to another URI
+  },
+  {
+    path: '**', // This is a catch-all wildcard route. This must always be at the end
+    redirectTo: '/not-found'
   }
 ];
 
@@ -166,7 +179,8 @@ const headerRoutes: Routes = [
     RoutingEditServerComponent,
     RoutingServerComponent,
     RoutingUserComponent,
-    Exercise1Component
+    Exercise1Component,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
