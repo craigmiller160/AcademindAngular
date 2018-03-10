@@ -19,6 +19,7 @@ import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.co
 import { RoutingServerComponent } from './other-lessons/servers-routing/routing-servers/routing-server/routing-server.component';
 import { RoutingEditServerComponent } from './other-lessons/servers-routing/routing-servers/routing-edit-server/routing-edit-server.component';
 import { AuthGuard } from './other-lessons/servers-routing/auth-guard.service';
+import { CanDeactivateGuard } from './other-lessons/servers-routing/routing-servers/routing-edit-server/can-deactivate-guard.service';
 
 const appRoutes: Routes = [
   {
@@ -100,7 +101,10 @@ const appRoutes: Routes = [
               },
               {
                 path: ':id/edit',
-                component: RoutingEditServerComponent
+                component: RoutingEditServerComponent,
+                canDeactivate: [
+                  CanDeactivateGuard
+                ]
               }
             ]
           }

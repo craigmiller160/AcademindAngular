@@ -48,6 +48,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './other-lessons/servers-routing/auth.service';
 import { AuthGuard } from './other-lessons/servers-routing/auth-guard.service';
+import { CanDeactivateGuard } from './other-lessons/servers-routing/routing-servers/routing-edit-server/can-deactivate-guard.service';
 
 @NgModule({
   declarations: [
@@ -99,7 +100,8 @@ import { AuthGuard } from './other-lessons/servers-routing/auth-guard.service';
     ShoppingService,
     RoutingServersService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    CanDeactivateGuard
   ],
   bootstrap: [AppComponent]
 })
