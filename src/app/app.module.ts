@@ -49,6 +49,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './other-lessons/servers-routing/auth.service';
 import { AuthGuard } from './other-lessons/servers-routing/auth-guard.service';
 import { CanDeactivateGuard } from './other-lessons/servers-routing/routing-servers/routing-edit-server/can-deactivate-guard.service';
+import { RoutingErrorPageComponent } from './other-lessons/servers-routing/routing-error-page/routing-error-page.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { CanDeactivateGuard } from './other-lessons/servers-routing/routing-serv
     RoutingServerComponent,
     RoutingUserComponent,
     Exercise1Component,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RoutingErrorPageComponent
   ],
   imports: [
     BrowserModule,
