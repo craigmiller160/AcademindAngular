@@ -45,104 +45,7 @@ import { RoutingUserComponent } from './other-lessons/servers-routing/routing-us
 import { Exercise1Component } from './other-lessons/exercise1/exercise1.component';
 import { OtherLessons } from './other-lessons/OtherLessons';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-const headerRoutes: Routes = [
-  {
-    path: '',
-    component: RecipeViewComponent
-  },
-  {
-    path: 'recipes',
-    component: RecipeViewComponent
-  },
-  {
-    path: 'shopping-list',
-    component: ShoppingListComponent
-  },
-  {
-    path: 'other-lessons',
-    children: [
-      {
-        path: '',
-        component: ServersComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[0].path,
-        component: ServersComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[1].path,
-        component: Exercise1Component
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[2].path,
-        component: UsernameInterpolateComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[3].path,
-        component: LogButtonClicksComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[4].path,
-        component: CompsBindingDeepComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[5].path,
-        component: ControlComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[6].path,
-        component: AccountsAppComponent
-      },
-      {
-        path: OtherLessons.OTHER_LESSONS[7].path,
-        component: ServersRoutingComponent,
-        children: [
-          {
-            path: '',
-            component: RoutingHomeComponent
-          },
-          {
-            path: 'users',
-            component: RoutingUsersComponent,
-            children: [
-              {
-                path: ':id/:name',
-                component: RoutingUserComponent
-              }
-            ]
-          },
-          {
-            path: 'servers',
-            component: RoutingServersComponent,
-            children: [
-              {
-                path: ':id',
-                component: RoutingServerComponent
-              },
-              {
-                path: ':id/edit',
-                component: RoutingEditServerComponent
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    path: 'not-found',
-    component: PageNotFoundComponent
-  },
-  {
-    path: 'something',
-    redirectTo: '/not-found' // This is a redirect to another URI
-  },
-  {
-    path: '**', // This is a catch-all wildcard route. This must always be at the end
-    redirectTo: '/not-found'
-  }
-];
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -185,7 +88,7 @@ const headerRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(headerRoutes)
+    AppRoutingModule
   ],
   providers: [
     AccountsService,
