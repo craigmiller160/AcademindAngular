@@ -50,6 +50,7 @@ import { AuthService } from './other-lessons/servers-routing/auth.service';
 import { AuthGuard } from './other-lessons/servers-routing/auth-guard.service';
 import { CanDeactivateGuard } from './other-lessons/servers-routing/routing-servers/routing-edit-server/can-deactivate-guard.service';
 import { RoutingErrorPageComponent } from './other-lessons/servers-routing/routing-error-page/routing-error-page.component';
+import { ServerResolver } from './other-lessons/servers-routing/routing-servers/routing-server/server-resolver.service';
 
 @NgModule({
   declarations: [
@@ -103,7 +104,8 @@ import { RoutingErrorPageComponent } from './other-lessons/servers-routing/routi
     RoutingServersService,
     AuthService,
     AuthGuard,
-    CanDeactivateGuard
+    CanDeactivateGuard,
+    ServerResolver
   ],
   bootstrap: [AppComponent]
 })

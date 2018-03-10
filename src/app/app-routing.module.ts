@@ -21,6 +21,7 @@ import { RoutingEditServerComponent } from './other-lessons/servers-routing/rout
 import { AuthGuard } from './other-lessons/servers-routing/auth-guard.service';
 import { CanDeactivateGuard } from './other-lessons/servers-routing/routing-servers/routing-edit-server/can-deactivate-guard.service';
 import { RoutingErrorPageComponent } from './other-lessons/servers-routing/routing-error-page/routing-error-page.component';
+import { ServerResolver } from './other-lessons/servers-routing/routing-servers/routing-server/server-resolver.service';
 
 const appRoutes: Routes = [
   {
@@ -98,7 +99,10 @@ const appRoutes: Routes = [
             children: [
               {
                 path: ':id',
-                component: RoutingServerComponent
+                component: RoutingServerComponent,
+                resolve: {
+                  server: ServerResolver
+                }
               },
               {
                 path: ':id/edit',
