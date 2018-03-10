@@ -90,7 +90,7 @@ const appRoutes: Routes = [
           {
             path: 'servers',
             component: RoutingServersComponent,
-            canActivate: [
+            canActivateChild: [
               AuthGuard
             ],
             children: [
