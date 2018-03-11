@@ -51,6 +51,7 @@ import { AuthGuard } from './other-lessons/servers-routing/auth-guard.service';
 import { CanDeactivateGuard } from './other-lessons/servers-routing/routing-servers/routing-edit-server/can-deactivate-guard.service';
 import { RoutingErrorPageComponent } from './other-lessons/servers-routing/routing-error-page/routing-error-page.component';
 import { ServerResolver } from './other-lessons/servers-routing/routing-servers/routing-server/server-resolver.service';
+import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { ServerResolver } from './other-lessons/servers-routing/routing-servers/
     RoutingUserComponent,
     Exercise1Component,
     PageNotFoundComponent,
-    RoutingErrorPageComponent
+    RoutingErrorPageComponent,
+    RecipeStartComponent
   ],
   imports: [
     BrowserModule,

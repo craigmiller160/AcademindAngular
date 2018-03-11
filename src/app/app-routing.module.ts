@@ -22,6 +22,8 @@ import { AuthGuard } from './other-lessons/servers-routing/auth-guard.service';
 import { CanDeactivateGuard } from './other-lessons/servers-routing/routing-servers/routing-edit-server/can-deactivate-guard.service';
 import { RoutingErrorPageComponent } from './other-lessons/servers-routing/routing-error-page/routing-error-page.component';
 import { ServerResolver } from './other-lessons/servers-routing/routing-servers/routing-server/server-resolver.service';
+import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
+import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 
 const serversRoutingRoutes = {
   path: OtherLessons.OTHER_LESSONS[7].path,
@@ -125,7 +127,18 @@ const appRoutes: Routes = [
   },
   {
     path: 'recipes',
-    component: RecipeViewComponent
+    component: RecipeViewComponent,
+    children: [
+      {
+        path: '',
+        component: RecipeStartComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: ':id',
+        component: RecipeDetailComponent
+      }
+    ]
   },
   {
     path: 'shopping-list',
