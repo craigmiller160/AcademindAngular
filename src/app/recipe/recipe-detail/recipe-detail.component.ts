@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShoppingService } from '../../service/shopping.service';
 import { Recipe } from '../../model/recipe.model';
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +11,7 @@ import { RecipeService } from '../../service/recipe.service';
 })
 export class RecipeDetailComponent implements OnInit {
 
-  @Input() recipe: Recipe;
+  recipe: Recipe;
 
   constructor(private shoppingService: ShoppingService, private recipeService: RecipeService, private route: ActivatedRoute) { }
 
