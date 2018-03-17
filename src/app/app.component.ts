@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  headerBtnIndex = 0;
+  // headerBtnIndex = 0;
 
-  onHeaderBtnClick(event: {btnIndex: number}): void {
-    this.headerBtnIndex = event.btnIndex;
-  }
+  // onHeaderBtnClick(event: {btnIndex: number}): void {
+  //   this.headerBtnIndex = event.btnIndex;
+  // }
 }
