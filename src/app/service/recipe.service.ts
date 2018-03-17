@@ -18,7 +18,7 @@ export class RecipeService {
         new Ingredient('Cheese', 1)
       ])
   ];
-  readonly recipeSelected = new EventEmitter<Recipe>();
+  // readonly recipeSelected = new EventEmitter<Recipe>();
 
   constructor() { }
 
