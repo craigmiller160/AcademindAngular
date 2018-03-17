@@ -9,6 +9,7 @@ export class OtherLessons {
     new OtherLesson('Comps/Binding - Deep', 'comps-binding'),
     new OtherLesson('Directives - Deep', 'directives'),
     new OtherLesson('Services - Accounts', 'services'),
-    new OtherLesson('Servers & Routing', 'routing')
+    new OtherLesson('Servers & Routing', 'routing'),
+    new OtherLesson('Observables', 'observables')
   ];
 }

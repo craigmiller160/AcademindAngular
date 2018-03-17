@@ -25,6 +25,9 @@ import { ServerResolver } from './other-lessons/servers-routing/routing-servers/
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
 import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
+import { ObservablesComponent } from './other-lessons/observables/observables.component';
+import { ObservableHomeComponent } from './other-lessons/observables/observable-home/observable-home.component';
+import { ObservableUserComponent } from './other-lessons/observables/observable-user/observable-user.component';
 
 const serversRoutingRoutes = {
   path: OtherLessons.OTHER_LESSONS[7].path,
@@ -116,7 +119,21 @@ const otherLessonsRoutes = {
       path: OtherLessons.OTHER_LESSONS[6].path,
       component: AccountsAppComponent
     },
-    serversRoutingRoutes
+    serversRoutingRoutes,
+    {
+      path: OtherLessons.OTHER_LESSONS[8].path,
+      component: ObservablesComponent,
+      children: [
+        {
+          path: '',
+          component: ObservableHomeComponent
+        },
+        {
+          path: 'user/:id',
+          component: ObservableUserComponent
+        }
+      ]
+    }
   ]
 };
 

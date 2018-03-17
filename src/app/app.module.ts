@@ -53,6 +53,9 @@ import { RoutingErrorPageComponent } from './other-lessons/servers-routing/routi
 import { ServerResolver } from './other-lessons/servers-routing/routing-servers/routing-server/server-resolver.service';
 import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
+import { ObservablesComponent } from './other-lessons/observables/observables.component';
+import { ObservableHomeComponent } from './other-lessons/observables/observable-home/observable-home.component';
+import { ObservableUserComponent } from './other-lessons/observables/observable-user/observable-user.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +96,10 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
     PageNotFoundComponent,
     RoutingErrorPageComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    ObservablesComponent,
+    ObservableHomeComponent,
+    ObservableUserComponent
   ],
   imports: [
     BrowserModule,
