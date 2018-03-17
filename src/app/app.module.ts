@@ -56,6 +56,7 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
 import { ObservablesComponent } from './other-lessons/observables/observables.component';
 import { ObservableHomeComponent } from './other-lessons/observables/observable-home/observable-home.component';
 import { ObservableUserComponent } from './other-lessons/observables/observable-user/observable-user.component';
+import { ObservableUsersService } from './other-lessons/observables/observable-user/observable-users.service';
 
 @NgModule({
   declarations: [
@@ -115,7 +116,8 @@ import { ObservableUserComponent } from './other-lessons/observables/observable-
     AuthService,
     AuthGuard,
     CanDeactivateGuard,
-    ServerResolver
+    ServerResolver,
+    ObservableUsersService
   ],
   bootstrap: [AppComponent]
 })

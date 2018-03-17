@@ -22,7 +22,7 @@ export class ObservableHomeComponent implements OnInit, OnDestroy {
       observer => console.log(observer)
     );
 
-    const myObservable: Observable = Observable.create(
+    const myObservable: Observable<string> = Observable.create(
       (observer: Observer<string>) => {
         setTimeout(() => observer.next('first package'), 2000);
         setTimeout(() => observer.next('second package'), 4000);
