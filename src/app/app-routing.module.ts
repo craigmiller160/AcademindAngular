@@ -24,6 +24,7 @@ import { RoutingErrorPageComponent } from './other-lessons/servers-routing/routi
 import { ServerResolver } from './other-lessons/servers-routing/routing-servers/routing-server/server-resolver.service';
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
 import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 
 const serversRoutingRoutes = {
   path: OtherLessons.OTHER_LESSONS[7].path,
@@ -135,8 +136,16 @@ const appRoutes: Routes = [
         pathMatch: 'full'
       },
       {
+        path: 'new',
+        component: RecipeEditComponent
+      },
+      {
         path: ':id',
         component: RecipeDetailComponent
+      },
+      {
+        path: ':id/edit',
+        component: RecipeEditComponent
       }
     ]
   },

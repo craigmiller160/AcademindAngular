@@ -52,6 +52,7 @@ import { CanDeactivateGuard } from './other-lessons/servers-routing/routing-serv
 import { RoutingErrorPageComponent } from './other-lessons/servers-routing/routing-error-page/routing-error-page.component';
 import { ServerResolver } from './other-lessons/servers-routing/routing-servers/routing-server/server-resolver.service';
 import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.compone
     Exercise1Component,
     PageNotFoundComponent,
     RoutingErrorPageComponent,
-    RecipeStartComponent
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
