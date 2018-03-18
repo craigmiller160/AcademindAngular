@@ -29,6 +29,7 @@ import { ObservablesComponent } from './other-lessons/observables/observables.co
 import { ObservableHomeComponent } from './other-lessons/observables/observable-home/observable-home.component';
 import { ObservableUserComponent } from './other-lessons/observables/observable-user/observable-user.component';
 import { FormsComponent } from './other-lessons/forms/forms.component';
+import { ReactiveFormsComponent } from './other-lessons/reactive-forms/reactive-forms.component';
 
 const serversRoutingRoutes = {
   path: OtherLessons.OTHER_LESSONS[7].path,
@@ -138,6 +139,10 @@ const otherLessonsRoutes = {
     {
       path: OtherLessons.OTHER_LESSONS[9].path,
       component: FormsComponent
+    },
+    {
+      path: OtherLessons.OTHER_LESSONS[10].path,
+      component: ReactiveFormsComponent
     }
   ]
 };
