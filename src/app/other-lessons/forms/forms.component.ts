@@ -11,6 +11,7 @@ export class FormsComponent implements OnInit {
   @ViewChild('f') form: NgForm;
   defaultQuestion = 'pet';
   answer: string;
+  genders = ['Male', 'Female'];
 
   constructor() { }
 
@@ -19,6 +20,20 @@ export class FormsComponent implements OnInit {
 
   suggestUserName(): void {
     const suggestedName = 'Superuser';
+    // this.form.setValue({
+    //   userData: {
+    //     username: suggestedName,
+    //     email: ''
+    //   },
+    //   secret: 'pet',
+    //   questionAnswer: '',
+    //   gender: 'Male'
+    // });
+    this.form.form.patchValue({
+      userData: {
+        username: suggestedName
+      }
+    });
   }
 
   onSubmit(): void {
