@@ -57,6 +57,7 @@ import { ObservablesComponent } from './other-lessons/observables/observables.co
 import { ObservableHomeComponent } from './other-lessons/observables/observable-home/observable-home.component';
 import { ObservableUserComponent } from './other-lessons/observables/observable-user/observable-user.component';
 import { ObservableUsersService } from './other-lessons/observables/observable-user/observable-users.service';
+import { FormsComponent } from './other-lessons/forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { ObservableUsersService } from './other-lessons/observables/observable-u
     RecipeEditComponent,
     ObservablesComponent,
     ObservableHomeComponent,
-    ObservableUserComponent
+    ObservableUserComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,

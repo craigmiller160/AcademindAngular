@@ -10,6 +10,7 @@ export class OtherLessons {
     new OtherLesson('Directives - Deep', 'directives'),
     new OtherLesson('Services - Accounts', 'services'),
     new OtherLesson('Servers & Routing', 'routing'),
-    new OtherLesson('Observables', 'observables')
+    new OtherLesson('Observables', 'observables'),
+    new OtherLesson('Forms', 'forms')
   ];
 }
