@@ -28,6 +28,7 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
 import { ObservablesComponent } from './other-lessons/observables/observables.component';
 import { ObservableHomeComponent } from './other-lessons/observables/observable-home/observable-home.component';
 import { ObservableUserComponent } from './other-lessons/observables/observable-user/observable-user.component';
+import { FormsComponent } from './other-lessons/forms/forms.component';
 
 const serversRoutingRoutes = {
   path: OtherLessons.OTHER_LESSONS[7].path,
@@ -133,6 +134,10 @@ const otherLessonsRoutes = {
           component: ObservableUserComponent
         }
       ]
+    },
+    {
+      path: OtherLessons.OTHER_LESSONS[9].path,
+      component: FormsComponent
     }
   ]
 };
