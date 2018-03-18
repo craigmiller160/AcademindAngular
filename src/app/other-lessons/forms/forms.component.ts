@@ -39,6 +39,8 @@ export class FormsComponent implements OnInit {
   onSubmit(): void {
     console.log('Submitted');
     console.log(this.form);
+
+    // this.form.reset();
   }
 
 }
