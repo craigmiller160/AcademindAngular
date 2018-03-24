@@ -5,15 +5,12 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class ShoppingService {
 
-  // List of ingredients
-  // Add ingredient
-
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
     new Ingredient('Tomatoes', 10)
   ];
-  // readonly ingredientsChanged = new EventEmitter<Ingredient[]>();
   ingredientsChanged = new Subject<Ingredient[]>();
+  startedEditing = new Subject<number>();
 
   constructor() { }
 
@@ -23,8 +20,11 @@ export class ShoppingService {
 
   addIngredient(ingredient: Ingredient): void {
     this.findAndAddIngredient(ingredient);
-    // this.ingredientsChanged.emit(this.ingredients.slice());
     this.ingredientsChanged.next(this.ingredients.slice());
+  }
+
+  getIngredient(index: number): Ingredient {
+    return this.ingredients[index];
   }
 
   private findAndAddIngredient(ingredient: Ingredient): void {
@@ -38,7 +38,6 @@ export class ShoppingService {
 
   addAllIngredients(ingredients: Ingredient[]): void {
     ingredients.forEach(ingredient => this.findAndAddIngredient(ingredient));
-    // this.ingredientsChanged.emit(this.ingredients.slice());
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 

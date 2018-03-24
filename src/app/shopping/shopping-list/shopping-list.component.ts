@@ -10,10 +10,6 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
 
-  // ingredients: Ingredient[] = [
-  //   new Ingredient('Apples', 5),
-  //   new Ingredient('Tomatoes', 10)
-  // ];
   ingredients: Ingredient[];
   private ingredientsChangedSubscription: Subscription;
 
@@ -30,8 +26,8 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     this.ingredientsChangedSubscription.unsubscribe();
   }
 
-// onAddBtnClicked(event: {name: string, amount: number}): void {
-    // this.ingredients.push(event);
-  // }
+  onEditItem(index: number): void {
+    this.shoppingService.startedEditing.next(index);
+  }
 
 }
