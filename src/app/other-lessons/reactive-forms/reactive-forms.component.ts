@@ -10,13 +10,14 @@ export class ReactiveFormsComponent implements OnInit {
 
   genders = ['Male', 'Female'];
   signupForm: FormGroup;
+  forbiddenUsernames: string[] = ['Chris', 'Anna'];
 
   constructor() { }
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
       'userData': new FormGroup({
-        'username': new FormControl(null, Validators.required),
+        'username': new FormControl(null, [Validators.required, this.forbiddenNames.bind(this)]),
         'email': new FormControl(null, [Validators.required, Validators.email]),
       }),
       'gender': new FormControl(this.genders[0]),
@@ -31,6 +32,13 @@ export class ReactiveFormsComponent implements OnInit {
   onAddHobby(): void {
     const control = new FormControl(null, Validators.required);
     (<FormArray>this.signupForm.get('hobbies')).push(control);
+  }
+
+  forbiddenNames(control: FormControl): {[s: string]: boolean} {
+    if (this.forbiddenUsernames.includes(control.value)) {
+      return {nameIsForbidden: true};
+    }
+    return null;
   }
 
 }
