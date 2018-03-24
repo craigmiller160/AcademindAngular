@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -18,7 +19,7 @@ export class ReactiveFormsComponent implements OnInit {
     this.signupForm = new FormGroup({
       'userData': new FormGroup({
         'username': new FormControl(null, [Validators.required, this.forbiddenNames.bind(this)]),
-        'email': new FormControl(null, [Validators.required, Validators.email]),
+        'email': new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmails),
       }),
       'gender': new FormControl(this.genders[0]),
       'hobbies': new FormArray([])
@@ -36,9 +37,21 @@ export class ReactiveFormsComponent implements OnInit {
 
   forbiddenNames(control: FormControl): {[s: string]: boolean} {
     if (this.forbiddenUsernames.includes(control.value)) {
-      return {nameIsForbidden: true};
+      return {'nameIsForbidden': true};
     }
     return null;
+  }
+
+  forbiddenEmails(control: FormControl): Promise<any> | Observable<any> {
+    return new Promise<any>((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'test@test.com') {
+          resolve({'emailIsForbidden': true});
+        } else {
+          resolve(null);
+        }
+      }, 1500);
+    });
   }
 
 }
