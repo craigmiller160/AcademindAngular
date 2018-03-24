@@ -20,7 +20,7 @@ export class ShoppingListEditComponent implements OnInit, OnDestroy {
   constructor(private shoppingService: ShoppingService) { }
 
   ngOnInit(): void {
-    this.shoppingService.startedEditing.subscribe(index => {
+    this.subscription = this.shoppingService.startedEditing.subscribe(index => {
       this.editMode = true;
       this.editedItemIndex = index;
       this.editedItem = this.shoppingService.getIngredient(index);
@@ -35,9 +35,26 @@ export class ShoppingListEditComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  onClear(): void {
+    this.form.reset();
+    this.editedItemIndex = -1;
+    this.editMode = false;
+    this.editedItem = null;
+  }
+
   onAddItem(): void {
     const newIngredient = new Ingredient(this.form.value.name, this.form.value.amount);
-    this.shoppingService.addIngredient(newIngredient);
+    if (this.editMode) {
+      this.shoppingService.updateIngredient(this.editedItemIndex, newIngredient);
+    } else {
+      this.shoppingService.addIngredient(newIngredient);
+    }
+    this.onClear();
+  }
+
+  onDelete(): void {
+    this.shoppingService.deleteIngredient(this.editedItemIndex);
+    this.onClear();
   }
 
 }
