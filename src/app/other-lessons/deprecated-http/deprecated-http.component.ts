@@ -14,6 +14,7 @@ export class DeprecatedHttpComponent implements OnInit {
     new HttpServer('Testserver', 10, this.generateId()),
     new HttpServer('Liveserver', 100, this.generateId())
   ];
+  appName = this.serverService.getAppName();
 
   constructor(private serverService: HttpServerService) { }
 

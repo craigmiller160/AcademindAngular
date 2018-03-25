@@ -40,4 +40,9 @@ export class HttpServerService {
       });
   }
 
+  getAppName(): Observable<string> {
+    return this.http.get('https://udemy-ng-http-62276.firebaseio.com/appName.json')
+      .map(response => response.json());
+  }
+
 }
