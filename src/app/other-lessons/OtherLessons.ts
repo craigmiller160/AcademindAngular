@@ -12,6 +12,7 @@ export class OtherLessons {
     new OtherLesson('Servers & Routing', 'routing'),
     new OtherLesson('Observables', 'observables'),
     new OtherLesson('Forms', 'forms'),
-    new OtherLesson('Reactive Forms', 'reactive-forms')
+    new OtherLesson('Reactive Forms', 'reactive-forms'),
+    new OtherLesson('Pipes', 'pipes')
   ];
 }

@@ -60,6 +60,7 @@ import { ObservableUserComponent } from './other-lessons/observables/observable-
 import { ObservableUsersService } from './other-lessons/observables/observable-user/observable-users.service';
 import { FormsComponent } from './other-lessons/forms/forms.component';
 import { ReactiveFormsComponent } from './other-lessons/reactive-forms/reactive-forms.component';
+import { PipesComponent } from './other-lessons/pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { ReactiveFormsComponent } from './other-lessons/reactive-forms/reactive-
     ObservableHomeComponent,
     ObservableUserComponent,
     FormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
