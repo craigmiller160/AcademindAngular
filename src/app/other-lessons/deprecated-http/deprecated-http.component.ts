@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpServerService } from './http-server.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-deprecated-http',
@@ -19,6 +21,9 @@ export class DeprecatedHttpComponent implements OnInit {
       id: this.generateId()
     }
   ];
+
+  constructor(private serverService: HttpServerService) { }
+
   onAddServer(name: string): void {
     this.servers.push({
       name: name,
@@ -26,6 +31,15 @@ export class DeprecatedHttpComponent implements OnInit {
       id: this.generateId()
     });
   }
+
+  onSave(): void {
+    // No un-subscription is necessary, the HTTP service handles this for us
+    this.serverService.storeServers(this.servers).subscribe(
+      response => console.log(response),
+      error => console.log(error)
+    );
+  }
+
   private generateId(): number {
     return Math.round(Math.random() * 10000);
   }

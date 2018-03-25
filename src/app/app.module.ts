@@ -64,6 +64,8 @@ import { PipesComponent } from './other-lessons/pipes/pipes.component';
 import { ShortenPipe } from './other-lessons/pipes/shorten.pipe';
 import { FilterPipe } from './other-lessons/pipes/filter.pipe';
 import { DeprecatedHttpComponent } from './other-lessons/deprecated-http/deprecated-http.component';
+import { HttpModule } from '@angular/http';
+import { HttpServerService } from './other-lessons/deprecated-http/http-server.service';
 
 @NgModule({
   declarations: [
@@ -119,7 +121,8 @@ import { DeprecatedHttpComponent } from './other-lessons/deprecated-http/depreca
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     AccountsService,
@@ -131,7 +134,8 @@ import { DeprecatedHttpComponent } from './other-lessons/deprecated-http/depreca
     AuthGuard,
     CanDeactivateGuard,
     ServerResolver,
-    ObservableUsersService
+    ObservableUsersService,
+    HttpServerService
   ],
   bootstrap: [AppComponent]
 })
