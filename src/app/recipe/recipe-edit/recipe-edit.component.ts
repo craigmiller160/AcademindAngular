@@ -82,7 +82,7 @@ export class RecipeEditComponent implements OnInit {
     const amount = ingredient ? ingredient.amount : null;
     return new FormGroup({
       'name': new FormControl(name, Validators.required),
-      'amount': new FormControl(amount, [Validators.required, Validators.pattern('^[1-9}+[0-9]*$')])
+      'amount': new FormControl(amount, [Validators.required, Validators.pattern(/^[1-9}+[0-9]*$/)])
     });
   }
 
