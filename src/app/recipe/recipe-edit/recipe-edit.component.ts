@@ -52,19 +52,13 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // const recipe = new Recipe(
-    //   this.recipeForm.value['name'],
-    //   this.recipeForm.value['description'],
-    //   this.recipeForm.value['imagePath'],
-    //   this.recipeForm.value['ingredients']
-    // );
-
     if (this.editMode) {
       // If the object has the same signature as the TypeScript class, it can be passed as a typed parameter
       this.recipeService.updateRecipe(this.id, this.recipeForm.value);
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
     }
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 
   onAddIngredient(): void {
