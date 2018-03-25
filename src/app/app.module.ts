@@ -62,6 +62,7 @@ import { FormsComponent } from './other-lessons/forms/forms.component';
 import { ReactiveFormsComponent } from './other-lessons/reactive-forms/reactive-forms.component';
 import { PipesComponent } from './other-lessons/pipes/pipes.component';
 import { ShortenPipe } from './other-lessons/pipes/shorten.pipe';
+import { FilterPipe } from './other-lessons/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -109,7 +110,8 @@ import { ShortenPipe } from './other-lessons/pipes/shorten.pipe';
     FormsComponent,
     ReactiveFormsComponent,
     PipesComponent,
-    ShortenPipe
+    ShortenPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
