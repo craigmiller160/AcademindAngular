@@ -31,6 +31,7 @@ import { ObservableUserComponent } from './other-lessons/observables/observable-
 import { FormsComponent } from './other-lessons/forms/forms.component';
 import { ReactiveFormsComponent } from './other-lessons/reactive-forms/reactive-forms.component';
 import { PipesComponent } from './other-lessons/pipes/pipes.component';
+import { DeprecatedHttpComponent } from './other-lessons/deprecated-http/deprecated-http.component';
 
 const serversRoutingRoutes = {
   path: OtherLessons.OTHER_LESSONS[7].path,
@@ -148,6 +149,10 @@ const otherLessonsRoutes = {
     {
       path: OtherLessons.OTHER_LESSONS[11].path,
       component: PipesComponent
+    },
+    {
+      path: OtherLessons.OTHER_LESSONS[12].path,
+      component: DeprecatedHttpComponent
     }
   ]
 };

@@ -63,6 +63,7 @@ import { ReactiveFormsComponent } from './other-lessons/reactive-forms/reactive-
 import { PipesComponent } from './other-lessons/pipes/pipes.component';
 import { ShortenPipe } from './other-lessons/pipes/shorten.pipe';
 import { FilterPipe } from './other-lessons/pipes/filter.pipe';
+import { DeprecatedHttpComponent } from './other-lessons/deprecated-http/deprecated-http.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { FilterPipe } from './other-lessons/pipes/filter.pipe';
     ReactiveFormsComponent,
     PipesComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    DeprecatedHttpComponent
   ],
   imports: [
     BrowserModule,

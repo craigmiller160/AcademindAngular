@@ -13,6 +13,7 @@ export class OtherLessons {
     new OtherLesson('Observables', 'observables'),
     new OtherLesson('Forms', 'forms'),
     new OtherLesson('Reactive Forms', 'reactive-forms'),
-    new OtherLesson('Pipes', 'pipes')
+    new OtherLesson('Pipes', 'pipes'),
+    new OtherLesson('Deprecated HTTP', 'deprecated-http')
   ];
 }
