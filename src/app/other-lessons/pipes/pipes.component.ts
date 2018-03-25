@@ -46,4 +46,13 @@ export class PipesComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  onAddServer(): void {
+    this.servers.push({
+      instanceType: 'small',
+      name: 'New Server',
+      status: 'stable',
+      started: new Date(2017, 1, 15)
+    });
+  }
 }
