@@ -48,4 +48,11 @@ export class DeprecatedHttpComponent implements OnInit {
     );
   }
 
+  onLoadError(): void {
+    this.serverService.getServersError().subscribe(
+      servers => this.servers = servers,
+      error => console.log(error)
+    );
+  }
+
 }
