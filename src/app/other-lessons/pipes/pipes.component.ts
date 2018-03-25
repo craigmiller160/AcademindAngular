@@ -42,7 +42,7 @@ export class PipesComponent implements OnInit {
     };
   }
 
-  onInit(): void {
+  ngOnInit(): void {
 
   }
 }
