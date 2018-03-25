@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpServerService } from './http-server.service';
 import { Subscription } from 'rxjs/Subscription';
+import { HttpServer } from './http-server.model';
 
 @Component({
   selector: 'app-deprecated-http',
@@ -9,17 +10,9 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class DeprecatedHttpComponent implements OnInit {
 
-  servers: {name: string, capacity: number, id: number}[] = [
-    {
-      name: 'Testserver',
-      capacity: 10,
-      id: this.generateId()
-    },
-    {
-      name: 'Liveserver',
-      capacity: 100,
-      id: this.generateId()
-    }
+  servers: HttpServer[] = [
+    new HttpServer('Testserver', 10, this.generateId()),
+    new HttpServer('Liveserver', 100, this.generateId())
   ];
 
   constructor(private serverService: HttpServerService) { }
@@ -45,6 +38,14 @@ export class DeprecatedHttpComponent implements OnInit {
   }
 
   ngOnInit() {
+
+  }
+
+  onLoad(): void {
+    this.serverService.getServers().subscribe(
+      servers => this.servers = servers,
+      error => console.log(error)
+    );
   }
 
 }
