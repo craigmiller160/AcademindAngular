@@ -61,6 +61,7 @@ import { ObservableUsersService } from './other-lessons/observables/observable-u
 import { FormsComponent } from './other-lessons/forms/forms.component';
 import { ReactiveFormsComponent } from './other-lessons/reactive-forms/reactive-forms.component';
 import { PipesComponent } from './other-lessons/pipes/pipes.component';
+import { ShortenPipe } from './other-lessons/pipes/shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -107,7 +108,8 @@ import { PipesComponent } from './other-lessons/pipes/pipes.component';
     ObservableUserComponent,
     FormsComponent,
     ReactiveFormsComponent,
-    PipesComponent
+    PipesComponent,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,

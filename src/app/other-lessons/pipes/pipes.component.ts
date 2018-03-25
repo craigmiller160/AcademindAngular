@@ -10,7 +10,7 @@ export class PipesComponent implements OnInit {
   servers = [
     {
       instanceType: 'medium',
-      name: 'Production Server',
+      name: 'Production',
       status: 'stable',
       started: new Date(2017, 1, 15)
     },
