@@ -9,10 +9,10 @@ import { RecipeService } from '../../service/recipe.service';
 })
 export class RecipeViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
-
+    this.recipeService.init();
   }
 
 }
