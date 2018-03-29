@@ -1,6 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { OtherLesson } from '../other-lessons/OtherLesson';
 import { OtherLessons } from '../other-lessons/OtherLessons';
+import { DataStorageService } from '../service/data-storage.service';
+import { RecipeService } from '../service/recipe.service';
 
 @Component({
   selector: 'app-header',
@@ -8,19 +10,24 @@ import { OtherLessons } from '../other-lessons/OtherLessons';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  @Output() headerClick = new EventEmitter<{btnIndex: number}>();
-  btnIndex = 0;
   otherLessons: OtherLesson[] = OtherLessons.OTHER_LESSONS;
 
-  constructor() { }
+  constructor(private dataStorageService: DataStorageService, private recipeService: RecipeService) { }
 
   ngOnInit() {
   }
 
-  onHeaderClick(btnIndex: number): void {
-    this.headerClick.emit({btnIndex: btnIndex});
-    this.btnIndex = btnIndex;
+  onSaveData(): void {
+    this.dataStorageService.storeRecipes().subscribe(response => {
+      console.log('Store Recipes Working');
+    });
+  }
+
+  onFetchData(): void {
+    this.dataStorageService.getRecipes().subscribe(recipes => {
+      console.log('Get Recipes Working');
+      this.recipeService.setRecipes(recipes);
+    });
   }
 
 }

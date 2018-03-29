@@ -66,7 +66,7 @@ import { FilterPipe } from './other-lessons/pipes/filter.pipe';
 import { DeprecatedHttpComponent } from './other-lessons/deprecated-http/deprecated-http.component';
 import { HttpModule } from '@angular/http';
 import { HttpServerService } from './other-lessons/deprecated-http/http-server.service';
-import { RecipeHttpService } from './service/recipe-http.service';
+import { DataStorageService } from './service/data-storage.service';
 
 @NgModule({
   declarations: [
@@ -137,7 +137,7 @@ import { RecipeHttpService } from './service/recipe-http.service';
     ServerResolver,
     ObservableUsersService,
     HttpServerService,
-    RecipeHttpService
+    DataStorageService
   ],
   bootstrap: [AppComponent]
 })
