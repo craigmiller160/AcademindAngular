@@ -20,7 +20,15 @@ export class DataStorageService {
 
   getRecipes(): Observable<Recipe[]> {
     return this.http.get('https://ng-recipe-book-cac34.firebaseio.com/recipes.json')
-      .map(response => response.json());
+      .map(response => {
+        const recipes: Recipe[] = response.json();
+        recipes.forEach(recipe => {
+          if (!recipe['ingredients']) {
+            recipe['ingredients'] = [];
+          }
+        });
+        return recipes;
+      });
   }
 
 }
